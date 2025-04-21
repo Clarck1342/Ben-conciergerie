@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ben Conciergerie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Open Sans', sans-serif; background-color: #fdfdfd; color: #333; }
+    header { background-color: #1a1a1a; color: white; padding: 2rem; text-align: center; position: relative; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 0; }
+    .language-switcher { position: absolute; top: 20px; right: 20px; }
+    .language-switcher button { background-color: white; color: #1a1a1a; border: none; padding: 0.5rem 1rem; cursor: pointer; font-weight: bold; }
+    nav { display: flex; flex-wrap: wrap; justify-content: center; background-color: #333; }
+    nav a { color: white; text-decoration: none; padding: 1rem; display: inline-block; }
+    nav a:hover { background-color: #555; }
+    section { padding: 2rem; max-width: 1000px; margin: auto; }
+    .services, .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .service-card, .gallery img { background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden; }
+    .service-card { padding: 1rem; }
+    form { display: flex; flex-direction: column; }
+    input, textarea { padding: 0.75rem; margin: 0.5rem 0; border: 1px solid #ccc; border-radius: 4px; width: 100%; }
+    button { padding: 0.75rem; background-color: #1a1a1a; color: white; border: none; cursor: pointer; border-radius: 4px; }
+    button:hover { background-color: #444; }
+    footer { background-color: #1a1a1a; color: white; text-align: center; padding: 1rem; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.8rem; }
+      nav a { padding: 0.75rem; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ben Conciergerie</h1>
+    <p>Premium Lifestyle Services in Benin</p>
+    <div class="language-switcher">
+      <button onclick="alert('Switch to French')">FR</button>
+    </div>
+  </header>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#quote">Get a Quote</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service-card"><h3>Personal Chef</h3><p>Private dining experiences customized to your taste and dietary needs.</p></div>
+      <div class="service-card"><h3>Car Rental</h3><p>Reliable and elegant vehicle options from sedans to SUVs, with or without driver.</p></div>
+      <div class="service-card"><h3>Guesthouse Booking</h3><p>Find and book high-end guesthouses across Benin with 24/7 support.</p></div>
+      <div class="service-card"><h3>Professional Cleaning</h3><p>Top-tier cleaning for homes, offices, and events.</p></div>
+      <div class="service-card"><h3>Airport Pickup</h3><p>Stress-free arrivals and departures with courteous drivers.</p></div>
+      <div class="service-card"><h3>Courier Service</h3><p>Fast and secure delivery of documents and packages.</p></div>
+    </div>
+  </section>
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1511918984145-48de785d4c4b" alt="Car Rental">
+      <img src="https://images.unsplash.com/photo-1603046891739-8fe87c99c9a3" alt="Private Chef">
+      <img src="https://images.unsplash.com/photo-1581579185169-8e76c944c3ac" alt="Cleaning Team">
+    </div>
+  </section>
+  <section id="quote">
+    <h2>Get a Quote</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="What service do you need?"></textarea>
+      <button type="submit">Request Quote</button>
+    </form>
+  </section>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+  <footer>
+    <p>&copy; 2025 Ben Conciergerie. All rights reserved.</p>
+  </footer>
+</body>
+</html>
