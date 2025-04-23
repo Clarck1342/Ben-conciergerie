@@ -5,17 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ben Conciergerie</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
-    header { background: #222; color: #fff; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
-    nav { background: #f4f4f4; padding: 1rem; display: flex; justify-content: center; gap: 1rem; }
-    section { padding: 2rem; }
-    .services, .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
-    .service, .gallery-item { background: #f9f9f9; padding: 1rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); text-align: center; }
-    .gallery-item img { max-width: 100%; height: auto; border-radius: 8px; }
-    form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 1rem; }
-    input, textarea { padding: 0.5rem; font-size: 1rem; }
-    button { background: #222; color: white; border: none; padding: 0.7rem; cursor: pointer; }
-    footer { background: #222; color: #fff; text-align: center; padding: 1rem; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .lang-switch {
+      color: white;
+    }
+    nav {
+      background: #f4f4f4;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    section {
+      padding: 2rem;
+    }
+    .services, .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .service, .gallery-item {
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .gallery-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    button {
+      background: #222;
+      color: white;
+      border: none;
+      padding: 0.7rem;
+      cursor: pointer;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -49,10 +109,18 @@
   <section id="gallery">
     <h2 id="gallery-title">Gallery</h2>
     <div class="gallery">
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1511918984145-48de785d4c4b" alt="Car Rental"><p id="img1-caption">Car Rental</p></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1603046891739-8fe87c99c9a3" alt="Private Chef"><p id="img2-caption">Private Chef</p></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581579185169-8e76c944c3ac" alt="Cleaning Team"><p id="img3-caption">Cleaning Team</p></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85f" alt="Luxury Villa"><p id="img4-caption">Luxury Villa Pool</p></div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1511918984145-48de785d4c4b" alt="Car Rental">
+        <p id="img1-caption">Car Rental</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1603046891739-8fe87c99c9a3" alt="Private Chef">
+        <p id="img2-caption">Personal Chef Service</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1581579185169-8e76c944c3ac" alt="Cleaning Team">
+        <p id="img3-caption">Professional Cleaning</p>
+      </div>
     </div>
   </section>
 
@@ -100,8 +168,7 @@
         'contact-title': 'Nous contacter',
         'img1-caption': 'Location de voiture',
         'img2-caption': 'Service de chef privé',
-        'img3-caption': 'Équipe de nettoyage',
-        'img4-caption': 'Villa de luxe avec piscine'
+        'img3-caption': 'Nettoyage professionnel'
       },
       en: {
         'site-title': 'Ben Conciergerie',
@@ -120,9 +187,8 @@
         'quote-title': 'Request a Quote',
         'contact-title': 'Contact Us',
         'img1-caption': 'Car Rental',
-        'img2-caption': 'Private Chef Service',
-        'img3-caption': 'Cleaning Team',
-        'img4-caption': 'Luxury Villa Pool'
+        'img2-caption': 'Personal Chef Service',
+        'img3-caption': 'Professional Cleaning'
       }
     };
 
