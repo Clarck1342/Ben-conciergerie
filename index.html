@@ -1,146 +1,200 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ben Conciergerie</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Open Sans', sans-serif; background-color: #fdfdfd; color: #333; }
-    header { background-color: #1a1a1a; color: white; padding: 2rem; text-align: center; position: relative; }
-    header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 0; }
-    .language-switcher { position: absolute; top: 20px; right: 20px; }
-    .language-switcher button { background-color: white; color: #1a1a1a; border: none; padding: 0.5rem 1rem; cursor: pointer; font-weight: bold; }
-    nav { display: flex; flex-wrap: wrap; justify-content: center; background-color: #333; }
-    nav a { color: white; text-decoration: none; padding: 1rem; display: inline-block; }
-    nav a:hover { background-color: #555; }
-    section { padding: 2rem; max-width: 1000px; margin: auto; }
-    .services, .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-    .service-card, .gallery img { background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden; }
-    .service-card { padding: 1rem; }
-    form { display: flex; flex-direction: column; }
-    input, textarea { padding: 0.75rem; margin: 0.5rem 0; border: 1px solid #ccc; border-radius: 4px; width: 100%; }
-    button { padding: 0.75rem; background-color: #1a1a1a; color: white; border: none; cursor: pointer; border-radius: 4px; }
-    button:hover { background-color: #444; }
-    footer { background-color: #1a1a1a; color: white; text-align: center; padding: 1rem; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .lang-switch {
+      color: white;
+    }
+    nav {
+      background: #f4f4f4;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    section {
+      padding: 2rem;
+    }
+    .services, .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .service, .gallery-item {
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .gallery-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    button {
+      background: #222;
+      color: white;
+      border: none;
+      padding: 0.7rem;
+      cursor: pointer;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1 id="site-title">Ben Conciergerie</h1>
-    <p id="site-tagline">Premium Lifestyle Services in Benin</p>
-    <div class="language-switcher">
-      <button onclick="setLanguage('en')">EN</button>
-      <button onclick="setLanguage('fr')">FR</button>
-    </div>
+    <select class="lang-switch" onchange="setLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+    </select>
   </header>
+
   <nav>
     <a href="#services" id="nav-services">Services</a>
     <a href="#gallery" id="nav-gallery">Gallery</a>
-    <a href="#quote" id="nav-quote">Get a Quote</a>
+    <a href="#quote" id="nav-quote">Quote</a>
     <a href="#contact" id="nav-contact">Contact</a>
   </nav>
+
   <section id="services">
     <h2 id="services-title">Our Services</h2>
     <div class="services">
-      <div class="service-card"><h3 id="s1-title">Personal Chef</h3><p id="s1-desc">Private dining experiences customized to your taste and dietary needs.</p></div>
-      <div class="service-card"><h3 id="s2-title">Car Rental</h3><p id="s2-desc">Reliable and elegant vehicle options from sedans to SUVs, with or without driver.</p></div>
-      <div class="service-card"><h3 id="s3-title">Guesthouse Booking</h3><p id="s3-desc">Find and book high-end guesthouses across Benin with 24/7 support.</p></div>
-      <div class="service-card"><h3 id="s4-title">Professional Cleaning</h3><p id="s4-desc">Top-tier cleaning for homes, offices, and events.</p></div>
-      <div class="service-card"><h3 id="s5-title">Airport Pickup</h3><p id="s5-desc">Stress-free arrivals and departures with courteous drivers.</p></div>
-      <div class="service-card"><h3 id="s6-title">Courier Service</h3><p id="s6-desc">Fast and secure delivery of documents and packages.</p></div>
+      <div class="service" id="s1">Car Rental</div>
+      <div class="service" id="s2">Private Chef</div>
+      <div class="service" id="s3">Professional Cleaning</div>
+      <div class="service" id="s4">Airport Pickup</div>
+      <div class="service" id="s5">Host/Hostess Service</div>
+      <div class="service" id="s6-desc">Fast and secure delivery of documents and packages.</div>
     </div>
   </section>
+
   <section id="gallery">
     <h2 id="gallery-title">Gallery</h2>
     <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1511918984145-48de785d4c4b" alt="Car Rental">
-      <img src="https://images.unsplash.com/photo-1603046891739-8fe87c99c9a3" alt="Private Chef">
-      <img src="https://images.unsplash.com/photo-1581579185169-8e76c944c3ac" alt="Cleaning Team">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1511918984145-48de785d4c4b" alt="Car Rental">
+        <p id="img1-caption">Car Rental</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1603046891739-8fe87c99c9a3" alt="Private Chef">
+        <p id="img2-caption">Personal Chef Service</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1581579185169-8e76c944c3ac" alt="Cleaning Team">
+        <p id="img3-caption">Professional Cleaning</p>
+      </div>
     </div>
   </section>
+
   <section id="quote">
-    <h2 id="quote-title">Get a Quote</h2>
+    <h2 id="quote-title">Request a Quote</h2>
     <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="What service do you need?"></textarea>
-      <button type="submit" id="quote-button">Request Quote</button>
+      <input type="text" placeholder="Name" />
+      <input type="email" placeholder="Email" />
+      <textarea placeholder="Your request..."></textarea>
+      <button type="submit">Submit</button>
     </form>
   </section>
+
   <section id="contact">
     <h2 id="contact-title">Contact Us</h2>
     <form>
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <textarea rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit" id="contact-button">Send Message</button>
+      <input type="text" placeholder="Name" />
+      <input type="email" placeholder="Email" />
+      <textarea placeholder="Message"></textarea>
+      <button type="submit">Send</button>
     </form>
   </section>
+
   <footer>
-    <p>&copy; 2025 Ben Conciergerie. All rights reserved.</p>
+    <p>&copy; 2025 Ben Conciergerie</p>
   </footer>
+
   <script>
     const translations = {
-      en: {
-        'site-tagline': 'Premium Lifestyle Services in Benin',
-        'nav-services': 'Services',
-        'nav-gallery': 'Gallery',
-        'nav-quote': 'Get a Quote',
-        'nav-contact': 'Contact',
-        'services-title': 'Our Services',
-        'gallery-title': 'Gallery',
-        'quote-title': 'Get a Quote',
-        'contact-title': 'Contact Us',
-        'quote-button': 'Request Quote',
-        'contact-button': 'Send Message',
-        's1-title': 'Personal Chef',
-        's1-desc': 'Private dining experiences customized to your taste and dietary needs.',
-        's2-title': 'Car Rental',
-        's2-desc': 'Reliable and elegant vehicle options from sedans to SUVs, with or without driver.',
-        's3-title': 'Guesthouse Booking',
-        's3-desc': 'Find and book high-end guesthouses across Benin with 24/7 support.',
-        's4-title': 'Professional Cleaning',
-        's4-desc': 'Top-tier cleaning for homes, offices, and events.',
-        's5-title': 'Airport Pickup',
-        's5-desc': 'Stress-free arrivals and departures with courteous drivers.',
-        's6-title': 'Courier Service',
-        's6-desc': 'Fast and secure delivery of documents and packages.'
-      },
       fr: {
-        'site-tagline': 'Services haut de gamme au Bénin',
+        'site-title': 'Ben Conciergerie',
         'nav-services': 'Services',
         'nav-gallery': 'Galerie',
-        'nav-quote': 'Demander un devis',
+        'nav-quote': 'Devis',
         'nav-contact': 'Contact',
         'services-title': 'Nos Services',
+        's1': 'Location de voiture',
+        's2': 'Chef privé',
+        's3': 'Nettoyage professionnel',
+        's4': 'Transfert aéroport',
+        's5': 'Service d’hôtes et hôtesses',
+        's6-desc': 'Livraison rapide et sécurisée de documents et colis.',
         'gallery-title': 'Galerie',
         'quote-title': 'Demander un devis',
-        'contact-title': 'Contactez-nous',
-        'quote-button': 'Obtenir un devis',
-        'contact-button': 'Envoyer',
-        's1-title': 'Chef Privé',
-        's1-desc': 'Expériences culinaires personnalisées selon vos goûts et régimes.',
-        's2-title': 'Location de Voiture',
-        's2-desc': 'Voitures élégantes avec ou sans chauffeur, de la berline au SUV.',
-        's3-title': 'Réservation de Guesthouse',
-        's3-desc': 'Réservez des maisons d’hôtes haut de gamme avec assistance 24h/24.',
-        's4-title': 'Nettoyage Professionnel',
-        's4-desc': 'Nettoyage de qualité pour maisons, bureaux et événements.',
-        's5-title': 'Transfert Aéroport',
-        's5-desc': 'Départs et arrivées sans stress avec des chauffeurs courtois.',
-        's6-title': 'Service de Courrier',
-        's6-desc': 'Livraison rapide et sécurisée de documents et colis.'
+        'contact-title': 'Nous contacter',
+        'img1-caption': 'Location de voiture',
+        'img2-caption': 'Service de chef privé',
+        'img3-caption': 'Nettoyage professionnel'
+      },
+      en: {
+        'site-title': 'Ben Conciergerie',
+        'nav-services': 'Services',
+        'nav-gallery': 'Gallery',
+        'nav-quote': 'Quote',
+        'nav-contact': 'Contact',
+        'services-title': 'Our Services',
+        's1': 'Car Rental',
+        's2': 'Private Chef',
+        's3': 'Professional Cleaning',
+        's4': 'Airport Pickup',
+        's5': 'Host/Hostess Service',
+        's6-desc': 'Fast and secure delivery of documents and packages.',
+        'gallery-title': 'Gallery',
+        'quote-title': 'Request a Quote',
+        'contact-title': 'Contact Us',
+        'img1-caption': 'Car Rental',
+        'img2-caption': 'Personal Chef Service',
+        'img3-caption': 'Professional Cleaning'
       }
     };
 
     function setLanguage(lang) {
       for (const id in translations[lang]) {
-        const element = document.getElementById(id);
-        if (element) element.innerText = translations[lang][id];
+        document.getElementById(id).textContent = translations[lang][id];
       }
     }
   </script>
